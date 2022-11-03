@@ -1,3 +1,4 @@
+const LIMPAR_TELA = true
 const NAO_LIMPAR_TELA = false
 
 export default class CalculadoraModel {
@@ -28,6 +29,37 @@ export default class CalculadoraModel {
       this.#acumulador,
       this.#operacao,
       NAO_LIMPAR_TELA
+    )
+  }
+  
+  pontoDigitado() {
+    return new CalculadoraModel(
+      this.#valor?.includes('.') ? this.#valor : this.#valor + '.',
+      this.#acumulador,
+      this.#operacao,
+      NAO_LIMPAR_TELA
+    )
+  }
+
+  limpar() {
+    return new CalculadoraModel()
+  }
+
+  operacaoDigitada(proximaOperacao: string) {
+    return this.calcular(proximaOperacao)
+  }
+
+  calcular(proximaOperacao: string = null) {
+    const acumulador = !this.#operacao
+      ? parseFloat(this.#valor)
+      : eval(`${this.#acumulador} ${this.#operacao} ${this.#valor}`)
+    const valor = !this.#operacao ? this.#valor : `${acumulador}`
+
+    return new CalculadoraModel(
+      valor,
+      acumulador,
+      proximaOperacao,
+      proximaOperacao ? LIMPAR_TELA : NAO_LIMPAR_TELA
     )
   }
 }
