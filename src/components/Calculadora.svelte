@@ -6,7 +6,7 @@
 </script>
 
 <div class="calculadora">
-  <Tela valor="123890712837891729837891729837" />
+  <Tela valor="0" />
   <Linha>
     <Botao destaque triplo texto="AC"/>
     <Botao operacao texto="/"/>
