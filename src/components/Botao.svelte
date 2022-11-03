@@ -4,9 +4,12 @@
   export let triplo: boolean = false
   export let operacao: boolean = false
   export let destaque: boolean = false
+
+  export let onClick: (valor: string) => void = () => {}
 </script>
 
 <button 
+  on:click={() => onClick(texto)}
   class="botao" 
   class:triplo 
   class:duplo
