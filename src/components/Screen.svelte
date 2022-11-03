@@ -1,15 +1,15 @@
 <script lang="ts">
-  export let valor: string
+  export let value: string
 
-  $: tamanhoFonte = valor.length > 20 ? 'pequena': `s-${valor.length}`
+  $: fontSize = value.length > 20 ? 'small': `s-${value.length}`
 </script>
 
-<div class={`tela ${tamanhoFonte}`}>
-  <span>{valor}</span>
+<div class={`display ${fontSize}`}>
+  <span>{value}</span>
 </div>
 
 <style>
-  .tela {
+  .display {
     display: flex;
     flex: 1;
     justify-content: flex-end;
@@ -34,5 +34,5 @@
   .s-19 { font-size: 0.78rem; }
   .s-20 { font-size: 0.74rem; }
 
-  .pequena { font-size: 0.6rem; }
+  .small { font-size: 0.6rem; }
 </style>

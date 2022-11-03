@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Calculadora from "./components/Calculadora.svelte";
+    import Calculator from "./components/Calculator.svelte";
 </script>
 
 <main>
-	<Calculadora />
+	<Calculator />
 </main>
 
 <style>
@@ -12,7 +12,7 @@
 	}
 	
 	:root {
-		--cor-fundo: #555
+		--background-color: #555
 	}
 
 	main {
